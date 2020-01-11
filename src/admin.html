@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,800|Open+Sans:400,700&display=swap" rel="stylesheet">
+    <title>Alpinus Design - Admin</title>
+</head>
+<body id="admin">
+    
+    <a href="index.html"><h1>Alpinus Design</h1></a>
+
+    <div id="admin-container">
+        <!--
+            Toggles Project, Education or Occupation handlers.
+        -->
+        <select id="admin-selector">
+            <option value="project" class="active">Project</option>
+            <option value="education">Education</optionvalue="project">
+            <option value="occupation">Occupation</optionvalue="project">
+        </select>
+
+        <!--
+            Toggles the Create, Update or Delete forms.
+        -->
+        <div id="admin-form-container">
+            <ul id="form-nav">
+                <li id="toggle-create" class="active">Add</li>
+                <li id="toggle-update">Update</li>
+                <li id="toggle-delete">Remove</li>
+            </ul>
+
+            <!-- Projects -->
+            <div id="project-form-cont" class="active">
+                <!-- Project create form -->
+                <form class="form-create active" >
+                    <label for="project-create-title">Title</label>
+                    <input type="text" name="project-create-title">
+                    <label for="project-create-description">Description</label>
+                    <input type="text" name="project-create-description">
+                    <label for="project-create-image">Image</label>
+                    <input type="file" name="project-create-image">
+                    <label for="project-create-url">URL</label>
+                    <input type="project-create-url" name="project-create-url">
+                    <input type="submit" value="Add project">
+                </form>
+                <!-- Project update form -->
+                <form class="form-update">
+                    <label for="updateTitle">Project title</label>
+                    <select id="project-update-title-old" name="updateTitle">
+                    </select>
+                    <label for="project-update-title">New title</label>
+                    <input type="text" name="project-update-title">
+                    <label for="project-update-description">Description</label>
+                    <input type="text" name="project-update-description">
+                    <label for="project-update-image">Image</label>
+                    <input type="file" name="project-update-image">
+                    <label for="project-update-url">URL</label>
+                    <input type="url" name="project-update-url">
+                    <input type="submit" value="Update project">
+                </form>
+                <!-- Project delete form-->
+                <form class="form-delete">
+                    <label for="projectTitle">Project title</label>
+                    <select id="project-delete-title" name="deleteTitle">
+                    </select>
+                    <input type="submit" value="Delete project">
+                </form>
+            </div>
+            <!-- Education -->
+            <div id="education-form-cont" class="active">
+
+            </div>
+
+            <!-- Occupation -->
+            <div id="occupation-form-cont" class="active">
+               
+            </div>
+        </div>
+    </div>
+    <script src="js/admin.js"></script>
+</body>
+</html>
