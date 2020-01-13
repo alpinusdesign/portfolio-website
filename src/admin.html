@@ -10,7 +10,7 @@
     <title>Alpinus Design - Admin</title>
 </head>
 <body id="admin">
-    
+
     <a href="index.html"><h1>Alpinus Design</h1></a>
 
     <div id="admin-container">
@@ -35,41 +35,41 @@
 
             <!-- Projects -->
             <div id="project-form-cont" class="active">
+
                 <!-- Project create form -->
-                <form class="form-create active" >
+                <form id="project-form-create" class="form-create active">
                     <label for="project-create-title">Title</label>
-                    <input type="text" name="project-create-title">
+                    <input type="text" name="project-create-title" id="project-create-title">
                     <label for="project-create-description">Description</label>
-                    <input type="text" name="project-create-description">
-                    <label for="project-create-image">Image</label>
-                    <input type="file" name="project-create-image">
+                    <input type="text" name="project-create-description" id="project-create-description">
                     <label for="project-create-url">URL</label>
-                    <input type="project-create-url" name="project-create-url">
+                    <input type="project-create-url" name="project-create-url" id="project-create-url">
                     <input type="submit" value="Add project">
                 </form>
+
                 <!-- Project update form -->
-                <form class="form-update">
-                    <label for="updateTitle">Project title</label>
-                    <select id="project-update-title-old" name="updateTitle">
+                <form id="project-form-update" class="form-update">
+                    <label for="project-update-title-old">Project</label>
+                    <select id="project-update-title-old" name="project-update-title-old" id="project-update-title-old">
                     </select>
-                    <label for="project-update-title">New title</label>
-                    <input type="text" name="project-update-title">
+                    <label for="project-update-title-new">New title</label>
+                    <input type="text" name="project-update-title-new" id="project-update-title-new">
                     <label for="project-update-description">Description</label>
-                    <input type="text" name="project-update-description">
-                    <label for="project-update-image">Image</label>
-                    <input type="file" name="project-update-image">
+                    <input type="text" name="project-update-description" id="project-update-description">
                     <label for="project-update-url">URL</label>
-                    <input type="url" name="project-update-url">
+                    <input type="url" name="project-update-url" id="project-update-url">
                     <input type="submit" value="Update project">
                 </form>
+
                 <!-- Project delete form-->
-                <form class="form-delete">
-                    <label for="projectTitle">Project title</label>
+                <form id="project-form-delete" class="form-delete">
+                    <label for="projectTitle">Project</label>
                     <select id="project-delete-title" name="deleteTitle">
                     </select>
                     <input type="submit" value="Delete project">
                 </form>
             </div>
+            
             <!-- Education -->
             <div id="education-form-cont" class="active">
 
