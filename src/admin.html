@@ -39,11 +39,11 @@
                 <!-- Project create form -->
                 <form id="project-form-create" class="form-create active">
                     <label for="project-create-title">Title</label>
-                    <input type="text" name="project-create-title" id="project-create-title">
+                    <input type="text" name="project-create-title" id="project-create-title" max="128" required>
                     <label for="project-create-description">Description</label>
-                    <input type="text" name="project-create-description" id="project-create-description">
+                    <input type="text" name="project-create-description" id="project-create-description" required>
                     <label for="project-create-url">URL</label>
-                    <input type="project-create-url" name="project-create-url" id="project-create-url">
+                    <input type="url" name="project-create-url" id="project-create-url" required>
                     <input type="submit" value="Add project">
                 </form>
 
@@ -53,11 +53,11 @@
                     <select id="project-update-title-old" name="project-update-title-old" id="project-update-title-old">
                     </select>
                     <label for="project-update-title-new">New title</label>
-                    <input type="text" name="project-update-title-new" id="project-update-title-new">
+                    <input type="text" name="project-update-title-new" id="project-update-title-new" max="128" required>
                     <label for="project-update-description">Description</label>
-                    <input type="text" name="project-update-description" id="project-update-description">
+                    <input type="text" name="project-update-description" id="project-update-description" required>
                     <label for="project-update-url">URL</label>
-                    <input type="url" name="project-update-url" id="project-update-url">
+                    <input type="url" name="project-update-url" id="project-update-url" required>
                     <input type="submit" value="Update project">
                 </form>
 
@@ -76,14 +76,14 @@
                 <!-- Create -->
                 <form id="education-form-create" class="form-create active">
                     <label for="education-create-name">Name</label>
-                    <input type="text" name="education-create-name" id="education-create-name">
+                    <input type="text" name="education-create-name" id="education-create-name" max="128" required>
                     <label for="education-create-school">School</label>
-                    <input type="text" name="education-create-school" id="education-create-school">
+                    <input type="text" name="education-create-school" id="education-create-school" max="256" required>
                     <label for="education-create-type">Type</label>
-                    <select id="education-create-type" name="education-create-type">
+                    <select id="education-create-type" name="education-create-type" required>
                     </select>
                     <label for="education-create-start">Start date</label>
-                    <input type="date" name="education-create-start" id="education-create-start">
+                    <input type="date" name="education-create-start" id="education-create-start" required>
                     <label for="education-create-start">End date</label>
                     <input type="date" name="education-create-end" id="education-create-end">
                     <input type="submit" value="Add education">
@@ -92,17 +92,17 @@
                 <!-- Update -->
                 <form id="education-form-update" class="form-update">
                     <label for="education-update-name-old">Education</label>
-                    <select id="education-update-name-old" name="education-update-name-old">
+                    <select id="education-update-name-old" name="education-update-name-old"> required
                     </select>
                     <label for="education-update-name">Name</label>
-                    <input type="text" name="education-update-name" id="education-update-name">
+                    <input type="text" name="education-update-name" id="education-update-name" max="128" required>
                     <label for="education-update-school">School</label>
-                    <input type="text" name="education-update-school" id="education-update-school">
+                    <input type="text" name="education-update-school" id="education-update-school" max="256" required>
                     <label for="education-update-type">Type</label>
-                    <select id="education-update-type" name="education-update-type">
+                    <select id="education-update-type" name="education-update-type" required>
                     </select>
                     <label for="education-update-start">Start date</label>
-                    <input type="date" name="education-update-start" id="education-update-start">
+                    <input type="date" name="education-update-start" id="education-update-start" required>
                     <label for="education-update-start">End date</label>
                     <input type="date" name="education-update-end" id="education-update-end">
                     <input type="submit" value="Update education">
@@ -111,7 +111,7 @@
                 <!-- Delete -->
                 <form id="education-form-delete" class="form-delete">
                     <label for="education-delete-name">Education</label>
-                    <select id="education-delete-name" name="education-delete-name">
+                    <select id="education-delete-name" name="education-delete-name" required>
                     </select>
                     <input type="submit" value="Delete education">
                 </form>
@@ -124,11 +124,11 @@
                 <!-- Create -->
                 <form id="occupation-form-create" class="form-create active">
                     <label for="occupation-create-company">Company</label>
-                    <input type="text" name="occupation-create-company" id="occupation-create-company">
+                    <input type="text" name="occupation-create-company" id="occupation-create-company" required>
                     <label for="occupation-create-title">Role</label>
-                    <input type="text" name="occupation-create-title" id="occupation-create-title">
+                    <input type="text" name="occupation-create-title" id="occupation-create-title" required>
                     <label for="occupation-create-start">Start date</label>
-                    <input type="date" name="occupation-create-start" id="occupation-create-start">
+                    <input type="date" name="occupation-create-start" id="occupation-create-start" required>
                     <label for="occupation-create-start">End date</label>
                     <input type="date" name="occupation-create-end" id="occupation-create-end">
                     <input type="submit" value="Add occupation">
@@ -137,14 +137,14 @@
                 <!-- Update -->
                 <form id="occupation-form-update" class="form-update">
                     <label for="occupation-update-entry">Occupation</label>
-                    <select id="occupation-update-entry" name="occupation-update-entry">
+                    <select id="occupation-update-entry" name="occupation-update-entry" required>
                     </select>
                     <label for="occupation-update-company">Company</label>
-                    <input type="text" name="occupation-update-company" id="occupation-update-company">
+                    <input type="text" name="occupation-update-company" id="occupation-update-company" required>
                     <label for="occupation-update-title">Role</label>
-                    <input type="text" name="occupation-update-title" id="occupation-update-title">
+                    <input type="text" name="occupation-update-title" id="occupation-update-title" required>
                     <label for="occupation-update-start">Start date</label>
-                    <input type="date" name="occupation-update-start" id="occupation-update-start">
+                    <input type="date" name="occupation-update-start" id="occupation-update-start" required>
                     <label for="occupation-update-start">End date</label>
                     <input type="date" name="occupation-update-end" id="occupation-update-end">
                     <input type="submit" value="Update occupation">
@@ -153,7 +153,7 @@
                 <!-- Delete -->
                 <form id="occupation-form-delete" class="form-delete">
                     <label for="occupation-delete-title">Occupation</label>
-                    <select id="occupation-delete-entry" name="occupation-delete-entry">
+                    <select id="occupation-delete-entry" name="occupation-delete-entry" required>
                     </select>
                     <input type="submit" value="Delete occupation">
                 </form>

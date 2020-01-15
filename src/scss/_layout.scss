@@ -2,6 +2,9 @@
 /* - Admin page - */
 body#admin
 {
+    max-width:64rem;
+    margin:0 auto;
+
     & > a
     {
         display:block;
@@ -9,12 +12,14 @@ body#admin
         color:$clr-grey-text;
         text-align:center;
     }
+    #admin-message-area
+    {
+        text-align: center;
+        margin:2rem 0;
+    }
 
     #admin-container
-    {
-        max-width:64rem;
-        margin:0 auto;
-        
+    { 
         #admin-form-container
         {
             background-color:white;

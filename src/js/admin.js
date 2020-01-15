@@ -312,13 +312,12 @@ projectForms.createFormEl.addEventListener("submit", function(e) {
     .then(function(response) {
         response.json().then(data => {
             loadSelectBoxes(data);
-            messageAreaEl.innerHTML = "<p>Project was successfully added.</p>"
-            // Clear form.
-            projectForms.createFormEl.reset();
+            messageAreaEl.innerHTML = "<p class='success'>Project was successfully added.</p>";
+            projectForms.createFormEl.reset(); // Clear form.
         });
       })
       .catch(function(err) {
-        console.log("Fatal error: ", err);
+        messageAreaEl.innerHTML = "<p class='error'>Fatal error: " + err + "</p>";
       });
   });
 
@@ -339,39 +338,38 @@ projectForms.updateFormEl.addEventListener("submit", function(e) {
         .then(function(response) {
         response.json().then(data => {
             loadSelectBoxes(data);
-            messageAreaEl.innerHTML = "<p>Project was successfully updated.</p>"
-            // Clear form.
-            projectForms.updateFormEl.reset();
+            messageAreaEl.innerHTML = "<p class='success'>Project was successfully updated.</p>";
+            projectForms.updateFormEl.reset(); // Clear form.
         });
         })
         .catch(function(err) {
-        console.log("Fatal error: ", err);
+        messageAreaEl.innerHTML = "<p class='error'>Fatal error: " + err + "</p>";
         });
     });
 
 /* - Delete - */
 projectForms.deleteFormEl.addEventListener("submit", function(e) {
-e.preventDefault(); // Prevent the form from being submited the default way.
+    e.preventDefault(); // Prevent the form from being submited the default way.
 
-fetch(url, {
-    method: "DELETE",
-    body: JSON.stringify({
-    dataset: "projects",
-    id: projectForms.deleteForm.titleEl.value
-    })
-})
-    .then(function(response) {
-    response.json().then(data => {
-        loadSelectBoxes(data);
-        messageAreaEl.innerHTML = "<p>Project was successfully deleted.</p>"
-        // Clear form.
-        projectForms.deleteFormEl.reset();
-        
-    });
-})
-    .catch(function(err) {
-    console.log("Fatal error: ", err);
-    });
+    if(window.confirm("Are you sure you want to delete the project?")){ // Delete confirmation.
+        fetch(url, {
+            method: "DELETE",
+            body: JSON.stringify({
+            dataset: "projects",
+            id: projectForms.deleteForm.titleEl.value
+            })
+        })
+            .then(function(response) {
+            response.json().then(data => {
+                loadSelectBoxes(data);
+                messageAreaEl.innerHTML = "<p class='success'>Project was successfully deleted.</p>";
+                projectForms.deleteFormEl.reset(); // Clear form.
+            });
+        })
+            .catch(function(err) {
+            messageAreaEl.innerHTML = "<p class='error'>Fatal error: " + err + "</p>";
+            });
+    }
 });
 
 
@@ -396,14 +394,13 @@ occupationForms.createFormEl.addEventListener("submit", function(e) {
     .then(function(response) {
         response.json().then(data => {
             loadSelectBoxes(data);
-            messageAreaEl.innerHTML = "<p>Occupatino was successfully added.</p>"
-            // Clear form.
-            occupationForms.createFormEl.reset();
+            messageAreaEl.innerHTML = "<p class='success'>Occupation was successfully added.</p>";
+            occupationForms.createFormEl.reset(); // Clear form.
             
         });
       })
       .catch(function(err) {
-        console.log("Fatal error: ", err);
+        messageAreaEl.innerHTML = "<p class='error'>Fatal error: " + err + "</p>";
       });
   });
 
@@ -425,13 +422,12 @@ occupationForms.updateFormEl.addEventListener("submit", function(e) {
         .then(function(response) {
         response.json().then(data => {
             loadSelectBoxes(data);
-            messageAreaEl.innerHTML = "<p>Occupation was successfully updated.</p>"
-            // Clear form.
-            occupationForms.updateFormEl.reset();
+            messageAreaEl.innerHTML = "<p class='success'>Occupation was successfully updated.</p>";
+            occupationForms.updateFormEl.reset(); // Clear form.
         });
         })
         .catch(function(err) {
-        console.log("Fatal error: ", err);
+        messageAreaEl.innerHTML = "<p class='error'>Fatal error: " + err + "</p>";
         });
     });
     
@@ -439,24 +435,25 @@ occupationForms.updateFormEl.addEventListener("submit", function(e) {
 occupationForms.deleteFormEl.addEventListener("submit", function(e) {
 e.preventDefault(); // Prevent the form from being submited the default way.
 
-fetch(url, {
-    method: "DELETE",
-    body: JSON.stringify({
-    dataset: "occupations",
-    id: occupationForms.deleteForm.entryEl.value
-    })
-})
-    .then(function(response) {
-    response.json().then(data => {
-        loadSelectBoxes(data);
-        messageAreaEl.innerHTML = "<p>Occupation was successfully deleted.</p>"
-        // Clear form.
-        occupationForms.deleteFormEl.reset();
-    });
-})
-    .catch(function(err) {
-    console.log("Fatal error: ", err);
-    });
+    if(window.confirm("Are you sure you want to delete the occupation?")){ // Delete confirmation.
+        fetch(url, {
+            method: "DELETE",
+            body: JSON.stringify({
+            dataset: "occupations",
+            id: occupationForms.deleteForm.entryEl.value
+            })
+        })
+            .then(function(response) {
+            response.json().then(data => {
+                loadSelectBoxes(data);
+                messageAreaEl.innerHTML = "<p class='success'>Occupation was successfully deleted.</p>";
+                occupationForms.deleteFormEl.reset(); // Clear form.
+            });
+        })
+            .catch(function(err) {
+            messageAreaEl.innerHTML = "<p class='error'>Fatal error: " + err + "</p>";
+            });
+    }
 });
 
 
@@ -483,13 +480,12 @@ educationForms.createFormEl.addEventListener("submit", function(e) {
     .then(function(response) {
         response.json().then(data => {
             loadSelectBoxes(data);
-            messageAreaEl.innerHTML = "<p>Education was successfully added.</p>"
-            // Clear form.
-            educationForms.createFormEl.reset();
+            messageAreaEl.innerHTML = "<p class='success'>Education was successfully added.</p>";
+            educationForms.createFormEl.reset(); // Clear form.
         });
       })
       .catch(function(err) {
-        console.log("Fatal error: ", err);
+        messageAreaEl.innerHTML = "<p class='error'>Fatal error: " + err + "</p>";
       });
   });
 
@@ -512,13 +508,12 @@ educationForms.updateFormEl.addEventListener("submit", function(e) {
         .then(function(response) {
         response.json().then(data => {
             loadSelectBoxes(data);
-            messageAreaEl.innerHTML = "<p>Education was successfully updated.</p>"
-            // Clear form.
-            educationForms.updateFormEl.reset();
+            messageAreaEl.innerHTML = "<p class='success'>Education was successfully updated.</p>";
+            educationForms.updateFormEl.reset(); // Clear form.
         });
         })
         .catch(function(err) {
-        console.log("Fatal error: ", err);
+        messageAreaEl.innerHTML = "<p class='error'>Fatal error: " + err + "</p>";
         });
     });
     
@@ -526,24 +521,25 @@ educationForms.updateFormEl.addEventListener("submit", function(e) {
 educationForms.deleteFormEl.addEventListener("submit", function(e) {
 e.preventDefault(); // Prevent the form from being submited the default way.
 
-fetch(url, {
-    method: "DELETE",
-    body: JSON.stringify({
-    dataset: "educations",
-    id: educationForms.deleteForm.nameEl.value
+if(window.confirm("Are you sure you want to delete the education?")){ // Delete confirmation.
+    fetch(url, {
+        method: "DELETE",
+        body: JSON.stringify({
+        dataset: "educations",
+        id: educationForms.deleteForm.nameEl.value
+        })
     })
-})
-    .then(function(response) {
-    response.json().then(data => {
-        loadSelectBoxes(data);
-        messageAreaEl.innerHTML = "<p>Education was successfully deleted.</p>"
-        // Clear form.
-        educationForms.deleteFormEl.reset();
-    });
-})
-    .catch(function(err) {
-    console.log("Fatal error: ", err);
-    });
+        .then(function(response) {
+        response.json().then(data => {
+            loadSelectBoxes(data);
+            messageAreaEl.innerHTML = "<p class='success'>Education was successfully deleted.</p>";
+            educationForms.deleteFormEl.reset(); // Clear form.
+        });
+    })
+        .catch(function(err) {
+        messageAreaEl.innerHTML = "<p class='error'>Fatal error: " + err + "</p>";
+        });
+    }
 });
 
 
@@ -557,7 +553,7 @@ document.addEventListener("DOMContentLoaded", function(){
         });
       })
       .catch(function(err) {
-        console.log("Fatal error: ", err);
+        messageAreaEl.innerHTML = "<p class='error'>Fatal error: " + err + "</p>";
       });
 });
 
