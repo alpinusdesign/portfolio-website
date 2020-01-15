@@ -30,7 +30,7 @@
             <ul id="form-nav">
                 <li id="toggle-create" class="active">Add</li>
                 <li id="toggle-update">Update</li>
-                <li id="toggle-delete">Remove</li>
+                <li id="toggle-delete">Delete</li>
             </ul>
 
             <!-- Projects -->
@@ -63,21 +63,101 @@
 
                 <!-- Project delete form-->
                 <form id="project-form-delete" class="form-delete">
-                    <label for="projectTitle">Project</label>
-                    <select id="project-delete-title" name="deleteTitle">
+                    <label for="project-delete-title">Project</label>
+                    <select id="project-delete-title" name="project-delete-title">
                     </select>
                     <input type="submit" value="Delete project">
                 </form>
             </div>
             
+            
             <!-- Education -->
-            <div id="education-form-cont" class="active">
+            <div id="education-form-cont">
+                <!-- Create -->
+                <form id="education-form-create" class="form-create active">
+                    <label for="education-create-name">Name</label>
+                    <input type="text" name="education-create-name" id="education-create-name">
+                    <label for="education-create-school">School</label>
+                    <input type="text" name="education-create-school" id="education-create-school">
+                    <label for="education-create-type">Type</label>
+                    <select id="education-create-type" name="education-create-type">
+                    </select>
+                    <label for="education-create-start">Start date</label>
+                    <input type="date" name="education-create-start" id="education-create-start">
+                    <label for="education-create-start">End date</label>
+                    <input type="date" name="education-create-end" id="education-create-end">
+                    <input type="submit" value="Update education">
+                </form>
 
+                <!-- Update -->
+                <form id="education-form-update" class="form-update">
+                    <label for="education-update-name-old">Education</label>
+                    <select id="education-update-name-old" name="education-update-name-old">
+                    </select>
+                    <label for="education-update-name">Name</label>
+                    <input type="text" name="education-update-name" id="education-update-name">
+                    <label for="education-update-school">School</label>
+                    <input type="text" name="education-update-school" id="education-update-school">
+                    <label for="education-update-type">Type</label>
+                    <select id="education-update-type" name="education-update-type">
+                    </select>
+                    <label for="education-update-start">Start date</label>
+                    <input type="date" name="education-update-start" id="education-update-start">
+                    <label for="education-update-start">End date</label>
+                    <input type="date" name="education-update-end" id="education-update-end">
+                    <input type="submit" value="Update education">
+                </form>
+
+                <!-- Delete -->
+                <form id="education-form-delete" class="form-delete">
+                    <label for="education-delete-name">Occupation</label>
+                    <select id="education-delete-name" name="education-delete-name">
+                    </select>
+                    <input type="submit" value="Delete education">
+                </form>
             </div>
 
+
+
             <!-- Occupation -->
-            <div id="occupation-form-cont" class="active">
-               
+            <div id="occupation-form-cont">
+                <!-- Create -->
+                <form id="occupation-form-create" class="form-create active">
+                    <label for="occupation-create-company">Company</label>
+                    <input type="text" name="occupation-create-company" id="occupation-create-company">
+                    <label for="occupation-create-title">Role</label>
+                    <input type="text" name="occupation-create-title" id="occupation-create-title">
+                    <label for="occupation-create-start">Start date</label>
+                    <input type="date" name="occupation-create-start" id="occupation-create-start">
+                    <label for="occupation-create-start">End date</label>
+                    <input type="date" name="occupation-create-end" id="occupation-create-end">
+                    <input type="submit" value="Add occupation">
+                </form>
+
+                <!-- Update -->
+                <form id="occupation-form-update" class="form-update">
+                    <label for="occupation-update-entry">Occupation</label>
+                    <select id="occupation-update-entry" name="occupation-update-entry">
+                    </select>
+                    <label for="occupation-update-company">Company</label>
+                    <input type="text" name="occupation-update-company" id="occupation-update-company">
+                    <label for="occupation-update-title">Role</label>
+                    <input type="text" name="occupation-update-title" id="occupation-update-title">
+                    <label for="occupation-update-start">Start date</label>
+                    <input type="date" name="occupation-update-start" id="occupation-update-start">
+                    <label for="occupation-update-start">End date</label>
+                    <input type="date" name="occupation-update-end" id="occupation-update-end">
+                    <input type="submit" value="Update occupation">
+                </form>
+
+                <!-- Delete -->
+                <form id="occupation-form-delete" class="form-delete">
+                    <label for="occupation-delete-title">Occupation</label>
+                    <select id="occupation-delete-entry" name="occupation-delete-entry">
+                    </select>
+                    <input type="submit" value="Delete occupation">
+                </form>
+
             </div>
         </div>
     </div>
