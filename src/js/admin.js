@@ -8,6 +8,10 @@ const url = "http://localhost/projekt/index.php";
 // Used to choose between different datasets.
 const selectorEl = document.getElementById("admin-selector");
 
+/* - Message area  - */
+// Used to display success- and error messages.
+const messageAreaEl = document.getElementById("admin-message-area");
+
     /* - Form containers - */
     // Used to access the containers that hold the different dataset-forms.
     const formContainers = {
@@ -82,7 +86,7 @@ const educationForms = {
         nameEl = document.getElementById("education-update-name"),
         schoolEl = document.getElementById("education-update-school"),
         typeEl = document.getElementById("education-update-type"),
-        startEt = document.getElementById("education-update-start"),
+        startEl = document.getElementById("education-update-start"),
         endEl = document.getElementById("education-update-end")
     },
 
@@ -308,7 +312,7 @@ projectForms.createFormEl.addEventListener("submit", function(e) {
     .then(function(response) {
         response.json().then(data => {
             loadSelectBoxes(data);
-            console.log("Project successfully added.");
+            messageAreaEl.innerHTML = "<p>Project was successfully added.</p>"
             // Clear form.
             projectForms.createFormEl.reset();
         });
@@ -335,7 +339,7 @@ projectForms.updateFormEl.addEventListener("submit", function(e) {
         .then(function(response) {
         response.json().then(data => {
             loadSelectBoxes(data);
-            console.log("Project successfully added.");
+            messageAreaEl.innerHTML = "<p>Project was successfully updated.</p>"
             // Clear form.
             projectForms.updateFormEl.reset();
         });
@@ -359,7 +363,7 @@ fetch(url, {
     .then(function(response) {
     response.json().then(data => {
         loadSelectBoxes(data);
-        console.log("Project successfully removed.");
+        messageAreaEl.innerHTML = "<p>Project was successfully deleted.</p>"
         // Clear form.
         projectForms.deleteFormEl.reset();
         
@@ -374,6 +378,7 @@ fetch(url, {
 
 /* = Occupations CRUD = */
 // CRUD-interface for the occupations dataset.
+
 /* - Create - */
 occupationForms.createFormEl.addEventListener("submit", function(e) {
     e.preventDefault(); // Prevent the form from being submited the default way.
@@ -391,7 +396,7 @@ occupationForms.createFormEl.addEventListener("submit", function(e) {
     .then(function(response) {
         response.json().then(data => {
             loadSelectBoxes(data);
-            console.log("Project successfully added.");
+            messageAreaEl.innerHTML = "<p>Occupatino was successfully added.</p>"
             // Clear form.
             occupationForms.createFormEl.reset();
             
@@ -420,7 +425,7 @@ occupationForms.updateFormEl.addEventListener("submit", function(e) {
         .then(function(response) {
         response.json().then(data => {
             loadSelectBoxes(data);
-            console.log("Project successfully added.");
+            messageAreaEl.innerHTML = "<p>Occupation was successfully updated.</p>"
             // Clear form.
             occupationForms.updateFormEl.reset();
         });
@@ -444,7 +449,7 @@ fetch(url, {
     .then(function(response) {
     response.json().then(data => {
         loadSelectBoxes(data);
-        console.log("Project successfully removed.");
+        messageAreaEl.innerHTML = "<p>Occupation was successfully deleted.</p>"
         // Clear form.
         occupationForms.deleteFormEl.reset();
     });
@@ -456,8 +461,10 @@ fetch(url, {
 
 
 
-/* = Occupations CRUD = */
-// CRUD-interface for the occupations dataset.
+
+/* = Educations CRUD = */
+// CRUD-interface for the educations dataset.
+
 /* - Create - */
 educationForms.createFormEl.addEventListener("submit", function(e) {
     e.preventDefault(); // Prevent the form from being submited the default way.
@@ -466,16 +473,17 @@ educationForms.createFormEl.addEventListener("submit", function(e) {
       method: "POST",
       body: JSON.stringify({
         dataset: "educations",
-        company: educationForms.createForm.companyEl.value,
-        title: educationForms.createForm.titleEl.value,
+        name: educationForms.createForm.nameEl.value,
+        school: educationForms.createForm.schoolEl.value,
         start: educationForms.createForm.startEl.value,
-        end: educationForms.createForm.endEl.value
+        end: educationForms.createForm.endEl.value,
+        typeID: educationForms.createForm.typeEl.value
       })
     })
     .then(function(response) {
         response.json().then(data => {
             loadSelectBoxes(data);
-            console.log("Project successfully added.");
+            messageAreaEl.innerHTML = "<p>Education was successfully added.</p>"
             // Clear form.
             educationForms.createFormEl.reset();
         });
@@ -493,17 +501,18 @@ educationForms.updateFormEl.addEventListener("submit", function(e) {
         method: "PUT",
         body: JSON.stringify({
         dataset: "educations",
-        id: educationForms.updateForm.oldEntryEl.value,
-        company: educationForms.updateForm.companyEl.value,
-        title: educationForms.updateForm.titleEl.value,
+        id: educationForms.updateForm.nameOldEl.value,
+        name: educationForms.updateForm.nameEl.value,
+        school: educationForms.updateForm.schoolEl.value,
         start: educationForms.updateForm.startEl.value,
-        end: educationForms.updateForm.endEl.value
+        end: educationForms.updateForm.endEl.value,
+        typeID: educationForms.updateForm.typeEl.value
         })
     })
         .then(function(response) {
         response.json().then(data => {
             loadSelectBoxes(data);
-            console.log("Project successfully added.");
+            messageAreaEl.innerHTML = "<p>Education was successfully updated.</p>"
             // Clear form.
             educationForms.updateFormEl.reset();
         });
@@ -521,13 +530,13 @@ fetch(url, {
     method: "DELETE",
     body: JSON.stringify({
     dataset: "educations",
-    id: educationForms.deleteForm.entryEl.value
+    id: educationForms.deleteForm.nameEl.value
     })
 })
     .then(function(response) {
     response.json().then(data => {
         loadSelectBoxes(data);
-        console.log("Project successfully removed.");
+        messageAreaEl.innerHTML = "<p>Education was successfully deleted.</p>"
         // Clear form.
         educationForms.deleteFormEl.reset();
     });

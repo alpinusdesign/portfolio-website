@@ -12,7 +12,7 @@
 <body id="admin">
 
     <a href="index.html"><h1>Alpinus Design</h1></a>
-
+    <div id="admin-message-area"></div>
     <div id="admin-container">
         <!--
             Toggles Project, Education or Occupation handlers.
@@ -86,7 +86,7 @@
                     <input type="date" name="education-create-start" id="education-create-start">
                     <label for="education-create-start">End date</label>
                     <input type="date" name="education-create-end" id="education-create-end">
-                    <input type="submit" value="Update education">
+                    <input type="submit" value="Add education">
                 </form>
 
                 <!-- Update -->
@@ -110,7 +110,7 @@
 
                 <!-- Delete -->
                 <form id="education-form-delete" class="form-delete">
-                    <label for="education-delete-name">Occupation</label>
+                    <label for="education-delete-name">Education</label>
                     <select id="education-delete-name" name="education-delete-name">
                     </select>
                     <input type="submit" value="Delete education">
