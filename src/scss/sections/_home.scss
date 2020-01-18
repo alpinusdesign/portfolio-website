@@ -1,0 +1,100 @@
+/* - Home - */
+section#home
+{
+    // Fade-in effect.
+    animation: fadein 1.5s;
+    @keyframes fadein
+    {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+    img
+    {
+        display:block;
+        position:relative;
+        bottom:-4rem;
+        z-index:0;
+        margin:0 auto;
+        border-radius:50%;
+        width:40rem;
+    }
+
+    .name-container
+    {
+        position:relative;
+        z-index:1;
+        background-image: url("../img/brush-stroke.svg");
+        background-repeat:no-repeat;
+        background-position:center;
+        padding:4.5rem;
+        margin-bottom:1.5rem;
+
+        .home-name,
+        .home-title
+        {
+            @include text-headings;
+            display:block;
+            color:white;
+            text-align:center;
+        }
+        
+        .home-name
+        {
+            font-size:3.2rem;
+            margin:0;
+        }
+        .home-title
+        {
+            font-size:2.2rem;
+        }
+    }
+
+    p
+    {
+        margin:0 auto;
+        max-width: 75rem;
+        text-align: center;
+    }
+
+    @include bp-medium
+    {
+        img
+        {
+            bottom:-6rem;
+            max-width:100%;
+        }
+
+        .name-container
+        {
+            width:48rem;
+            max-width:100%;
+            margin:0 auto;
+        }
+    }
+
+    @include bp-small
+    {
+
+        img
+        {
+         
+        }
+
+        .name-container
+        {
+            background-size:auto;
+            width:100%;
+
+            .home-name
+            {
+                font-size:2.4rem;
+            }
+
+            .home-title
+            {
+                font-size:2rem;
+            }
+        }
+    }
+}

@@ -14,7 +14,7 @@ const sourcemaps = require('gulp-sourcemaps');
 /* - File paths - */
 const files = {
   htmlPath: "src/*.html",
-  sassPath: "src/scss/*.scss",
+  sassPath: "src/**/*.scss",
   jsPath: "src/js/*.js",
   imgPath: "src/img/*"
 }

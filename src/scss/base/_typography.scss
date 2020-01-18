@@ -1,0 +1,78 @@
+/* - Global styles - */
+*, *:before, *:after
+{
+    box-sizing:inherit;
+}
+
+html
+{
+    box-sizing:border-box;
+    font-size:10px;
+    font-family:'Open Sans', sans-serif;
+    color:$clr-grey-text;
+}
+
+body
+{
+    line-height:1.25;
+}
+
+/* - General typography - */
+h1,
+h2,
+h3,
+button,
+label,
+input[type=submit],
+select
+{
+    @include text-headings;
+}
+
+h1
+{
+    font-size:2.4rem;
+}
+h2
+{
+    font-size:2.8rem;
+    text-align:center;
+}
+h3
+{
+    font-size:2.2rem;
+}
+
+input,
+label,
+select,
+span,
+li,
+p
+{
+    font-size:1.8rem;
+}
+
+a
+{
+    text-decoration:none;
+}
+
+/* - Typographic classes - */
+.bold
+{
+    font-weight:700;
+}
+
+    /* - Message classes - */
+    .error
+    {
+        color:#d82020;
+        font-weight:bold;
+    }
+
+    .success
+    {
+        color:#44bd2c;
+        font-weight:bold;
+    }

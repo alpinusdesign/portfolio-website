@@ -1,0 +1,37 @@
+/* - Portfolio - */
+section#portfolio
+{
+    #portfolio-area
+    {
+        max-width:64rem;
+        margin:0 auto;
+
+        .portfolio-entry
+        {
+            padding:0 4rem;
+            margin:4rem 0;
+            text-align:center;
+            & > *
+            {
+                display:block;
+            }
+
+            .portfolio-title
+            {
+                @include text-headings;
+            }
+
+            .portfolio-link
+            {
+                @include text-headings;
+                @include hover-grow;
+                font-size:1.8rem;
+                color:white;
+                padding:1rem 2.5rem;
+                border-radius:5rem;
+                display:inline-block;
+                background-color:$clr-blue-accent;
+            }
+        }
+    }
+}

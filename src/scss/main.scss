@@ -1,6 +1,20 @@
-@import 'reset';
-@import 'variables';
-@import 'mixins';
-@import 'base';
-@import 'layout';
-@import 'components';
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+@import 'base/reset';
+@import 'base/typography';
+
+@import 'layout/body';
+@import 'layout/header';
+@import 'layout/main';
+
+
+@import 'sections/home';
+@import 'sections/profile';
+@import 'sections/experience';
+@import 'sections/portfolio';
+@import 'sections/contact';
+
+@import 'pages/admin';
+
+@import 'components/forms';

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,800|Open+Sans:400,700&display=swap" rel="stylesheet">
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <title>Alpinus Design</title>
+</head>
+<body>
+    <header>
+        <nav id="desktop-nav">
+            <h1>Alpinus Design</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <nav id="hamburger-nav">
+            <a href="#" id="hamburger-bttn"><i class="fas fa-bars"></i></a>
+            <h1>Alpinus Design</h1>
+            <ul id="hamburger-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <img src="img/portrait.png" alt="An image of Linus Östlund, the portfolio owner.">
+            <div class="name-container">
+                <h2 class="home-name">Linus Östlund</h2>
+                <span class="home-title">Web Developer</span>
+            </div>
+            <p>
+                <span class="bold">Hi!</span> My name is <span class="bold">Linus Östlund</span>, and I'm a web developer operating from Sundsvall, Sweden.
+                I'm just about to finish my studies, so if you're looking to hire, you better catch me while I'm still on the market!
+            </p>
+        </section>
+        <section id="profile">
+            <h2>Profile</h2>
+            <section id="skills"> 
+                <h3>My skills</h3>
+                <div class="text-area">
+                    <p>
+                        On the frontend, I do <span class="bold">HTML5</span>, <span class="bold">CSS3</span>, <span class="bold">JavaScript(ES6)</span> and <span class="bold">TypeScript</span>.
+                        On the backend, I do <span class="bold">C#</span>, <span class="bold">PHP</span>  and <span class="bold">SQL</span>, with a bias towards <span class="bold">.NET</span> programming.
+                    </p>
+                </div>
+            </section>
+            <section id="about"> 
+                <h3>A little about me</h3>
+                <div class="text-area">
+                    <p>
+                        I'm a creative problem solver with an eye for details. While naturally 
+                        cooperative and supportive, I can still take the lead when it is  necessary.
+                    </p>
+                    <p>
+                        I preferably spend my free time making music, working out or cooking.
+                    </p>
+                </div>
+            </section>
+        </section>
+        <section id="experience">
+            <h2>Experience</h2>
+            <div id="experience-container">
+                <ul id="experience-nav">
+                    <li id="experience-nav-occupation" class="active">Work</li>
+                    <li id="experience-nav-education">Education</li>
+                </ul>
+                <div id="experience-area">
+                    <div id="occupation-area" class="active">
+                    </div>
+                    <div id="education-area">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio">
+            <h2>Portfolio</h2>
+            <div id="portfolio-area">
+
+            </div>
+        </section>
+        <section id="contact">
+            <form id="contact-form">
+                <h2>Contact</h2>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="10" required></textarea>
+                <input type="submit" value="Send">
+            </form>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/main.js"></script>
+</body>

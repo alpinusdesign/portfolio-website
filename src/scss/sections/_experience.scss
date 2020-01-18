@@ -1,0 +1,99 @@
+/* - Experience - */
+section#experience
+{
+    #experience-container
+    {
+        max-width:72rem;
+        margin:0 auto;
+
+        #experience-nav
+        {
+            @include box-shadow-std;
+            display:flex;
+            justify-content:space-between;
+
+            li
+            {
+                @include text-headings;
+                display:inline-block;
+                flex-grow: 1;
+                flex-shrink: 0;
+                flex-basis:auto;
+                background-color:$clr-grey-bright;
+                padding:1.5rem 4rem;
+                cursor: pointer;
+                user-select: none;
+                transition:.3s;
+
+                &.active
+                {
+                    background-color:white;
+                }
+            }
+
+            #experience-nav-education
+            {
+                text-align:right;
+            }
+        }
+        #experience-area
+        {
+            @include box-shadow-std;
+
+            #occupation-area,
+            #education-area
+            {
+                display:none;
+                
+                &.active
+                {
+                    display:block;
+                }
+            }
+
+            .experience-entry
+            {
+                background-color:white;
+                padding:2rem 4rem;
+
+
+                & > span
+                {
+                    display:block;
+                }
+
+                .education-name,
+                .occupation-title
+                {
+                    font-weight:700;
+                    text-transform:capitalize;
+                }
+                
+                .occupation-company,
+                .occupation-description,
+                .occupation-duration,
+                .education-school,
+                .education-type,
+                .education-duration
+                {
+                    color:$clr-grey-text-muted;
+                    font-weight:600;
+                }
+            }
+        }
+    }
+
+    @include bp-small
+    {
+        #experience-container
+        {
+            #experience-nav
+            {
+                li
+                {
+                    padding:1rem;
+                }
+            }
+        }
+    }
+}

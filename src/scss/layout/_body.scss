@@ -1,0 +1,16 @@
+/* - Body - */
+body
+{
+    max-width:92rem;
+    margin:0 auto;
+    background-color:$clr-grey-bg;
+    background-image:url("../img/background-image.jpg");
+    background-repeat:repeat;
+    padding:0 1rem;
+
+    @include bp-small
+    {
+        padding:0;
+    }
+}
+

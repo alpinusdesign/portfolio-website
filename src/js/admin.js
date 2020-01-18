@@ -1,8 +1,11 @@
-const url = "http://localhost/projekt/index.php";
+"use strict";
 
 /* ============= */
 /* = Bindings = */
 /* ============= */
+
+/* - API-URL - */
+const url = "http://localhost/projekt/index.php";
 
 /* - Dataset selector - */
 // Used to choose between different datasets.
@@ -15,18 +18,18 @@ const messageAreaEl = document.getElementById("admin-message-area");
     /* - Form containers - */
     // Used to access the containers that hold the different dataset-forms.
     const formContainers = {
-        project = document.getElementById("project-form-cont"),
-        occupation = document.getElementById("occupation-form-cont"),
-        education = document.getElementById("education-form-cont")
+        "project": document.getElementById("project-form-cont"),
+        "occupation": document.getElementById("occupation-form-cont"),
+        "education": document.getElementById("education-form-cont")
     }
 
 
 /* - Form navigation buttons - */
 // Used to switch between the different CRUD-options.
 const formToggles = {
-    toggleCreate = document.getElementById("toggle-create"),
-    toggleUpdate = document.getElementById("toggle-update"),
-    toggleDelete = document.getElementById("toggle-delete")
+    "toggleCreate": document.getElementById("toggle-create"),
+    "toggleUpdate": document.getElementById("toggle-update"),
+    "toggleDelete": document.getElementById("toggle-delete")
 }
 
     /* - Forms lists - */
@@ -39,90 +42,90 @@ const formToggles = {
 /* - Project forms - */
 // Used to access inputs and of the project-dataset.
 const projectForms = {
-    createFormEl = document.getElementById("project-form-create"),
-    updateFormEl = document.getElementById("project-form-update"),
-    deleteFormEl = document.getElementById("project-form-delete"),
+    "createFormEl": document.getElementById("project-form-create"),
+    "updateFormEl": document.getElementById("project-form-update"),
+    "deleteFormEl": document.getElementById("project-form-delete"),
 
     /* - Create - */
     createForm = {
-        titleEl = document.getElementById("project-create-title"),
-        descEl = document.getElementById("project-create-description"),
-        urlEl = document.getElementById("project-create-url")
+        "titleEl": document.getElementById("project-create-title"),
+        "descEl": document.getElementById("project-create-description"),
+        "urlEl": document.getElementById("project-create-url")
     },
 
     /* - Update - */
     updateForm = {
-        titleOldEl = document.getElementById("project-update-title-old"),
-        titleEl = document.getElementById("project-update-title-new"),
-        descEl = document.getElementById("project-update-description"),
-        urlEl = document.getElementById("project-update-url")
+        "titleOldEl": document.getElementById("project-update-title-old"),
+        "titleEl": document.getElementById("project-update-title-new"),
+        "descEl": document.getElementById("project-update-description"),
+        "urlEl": document.getElementById("project-update-url")
     },
 
     /* - Delete - */
     deleteForm = {
-        titleEl = document.getElementById("project-delete-title")
+        "titleEl": document.getElementById("project-delete-title")
     }
 };
 
 /* - Education forms - */
 // Used to access inputs and of the education-dataset.
 const educationForms = {
-    createFormEl = document.getElementById("education-form-create"),
-    updateFormEl = document.getElementById("education-form-update"),
-    deleteFormEl = document.getElementById("education-form-delete"),
+    "createFormEl": document.getElementById("education-form-create"),
+    "updateFormEl": document.getElementById("education-form-update"),
+    "deleteFormEl": document.getElementById("education-form-delete"),
 
     /* - Create - */
     createForm = {
-        nameEl = document.getElementById("education-create-name"),
-        schoolEl = document.getElementById("education-create-school"),
-        typeEl = document.getElementById("education-create-type"),
-        startEl = document.getElementById("education-create-start"),
-        endEl = document.getElementById("education-create-end")
+        "nameEl": document.getElementById("education-create-name"),
+        "schoolEl": document.getElementById("education-create-school"),
+        "typeEl": document.getElementById("education-create-type"),
+        "startEl": document.getElementById("education-create-start"),
+        "endEl": document.getElementById("education-create-end")
     },
 
     /* - Update - */
     updateForm = {
-        nameOldEl = document.getElementById("education-update-name-old"),
-        nameEl = document.getElementById("education-update-name"),
-        schoolEl = document.getElementById("education-update-school"),
-        typeEl = document.getElementById("education-update-type"),
-        startEl = document.getElementById("education-update-start"),
-        endEl = document.getElementById("education-update-end")
+        "nameOldEl": document.getElementById("education-update-name-old"),
+        "nameEl": document.getElementById("education-update-name"),
+        "schoolEl": document.getElementById("education-update-school"),
+        "typeEl": document.getElementById("education-update-type"),
+        "startEl": document.getElementById("education-update-start"),
+        "endEl": document.getElementById("education-update-end")
     },
 
     /* - Delete - */
     deleteForm = {
-        nameEl = document.getElementById("education-delete-name")
+        "nameEl": document.getElementById("education-delete-name")
     }
 };
 
 /* - Occupation forms - */
 // Used to access inputs and of the occupation-dataset.
 const occupationForms = {
-    createFormEl = document.getElementById("occupation-form-create"),
-    updateFormEl = document.getElementById("occupation-form-update"),
-    deleteFormEl = document.getElementById("occupation-form-delete"),
+    "createFormEl": document.getElementById("occupation-form-create"),
+    "updateFormEl": document.getElementById("occupation-form-update"),
+    "deleteFormEl": document.getElementById("occupation-form-delete"),
 
     /* - Create - */
     createForm = {
-        companyEl = document.getElementById("occupation-create-company"),
-        titleEl = document.getElementById("occupation-create-title"),
-        startEl = document.getElementById("occupation-create-start"),
-        endEl = document.getElementById("occupation-create-end")
+        "companyEl": document.getElementById("occupation-create-company"),
+        "titleEl": document.getElementById("occupation-create-title"),
+        "startEl": document.getElementById("occupation-create-start"),
+        "endEl": document.getElementById("occupation-create-end")
     },
 
     /* - Update - */
     updateForm = {
-        oldEntryEl = document.getElementById("occupation-update-entry"),
-        companyEl = document.getElementById("occupation-update-company"),
-        titleEl = document.getElementById("occupation-update-title"),
-        startEl = document.getElementById("occupation-update-start"),
-        endEl = document.getElementById("occupation-update-end")
+        "oldEntryEl": document.getElementById("occupation-update-entry"),
+        "companyEl": document.getElementById("occupation-update-company"),
+        "titleEl": document.getElementById("occupation-update-title"),
+        "startEl": document.getElementById("occupation-update-start"),
+        "endEl": document.getElementById("occupation-update-end")
     },
 
     /* - Delete - */
     deleteForm = {
-        entryEl = document.getElementById("occupation-delete-entry")
+        "entryEl": document.getElementById("occupation-delete-entry")
     }
 };
 
@@ -549,7 +552,7 @@ document.addEventListener("DOMContentLoaded", function(){
     fetch(url)
       .then(function(response) {
         response.json().then(data => {
-            loadSelectBoxes(data); // Display courses on successfull fetch.
+            loadSelectBoxes(data); // Update all select boxes.
         });
       })
       .catch(function(err) {

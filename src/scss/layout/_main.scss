@@ -1,0 +1,33 @@
+/* - Main - */
+main
+{
+    & > section
+    {
+        margin:7rem 0;
+
+        h2
+        {
+            margin-bottom:2rem;
+        }
+    }
+
+    & > section:last-child
+    {
+        margin-bottom:0;
+    }
+    
+    @include bp-medium
+    {
+        & > section
+        {
+            margin:5rem 0;
+        }
+    }
+    @include bp-small
+    {
+        & > section:first-child
+        {
+            margin:0;
+        }
+    }
+}

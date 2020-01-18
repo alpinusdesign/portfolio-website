@@ -32,4 +32,4 @@ CREATE TABLE Educations(
     FOREIGN KEY (TypeID) REFERENCES EducationTypes(ID)
 );
 
-INSERT INTO EducationTypes (Type) VALUES ("Courses"), ("Programs");
+INSERT INTO EducationTypes (Type) VALUES ("Course"), ("Program");
