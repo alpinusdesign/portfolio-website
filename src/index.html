@@ -12,7 +12,9 @@
     <title>Alpinus Design</title>
 </head>
 <body>
+    <!-- Header -->
     <header>
+        <!-- Desktop navigation -->
         <nav id="desktop-nav">
             <h1>Alpinus Design</h1>
             <ul>
@@ -23,6 +25,7 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        <!-- Hamburger navigation -->
         <nav id="hamburger-nav">
             <a href="#" id="hamburger-bttn"><i class="fas fa-bars"></i></a>
             <h1>Alpinus Design</h1>
@@ -35,7 +38,9 @@
             </ul>
         </nav>
     </header>
+    <!-- Main -->
     <main>
+        <!-- Home section -->
         <section id="home">
             <img src="img/portrait.png" alt="An image of Linus Östlund, the portfolio owner.">
             <div class="name-container">
@@ -47,6 +52,7 @@
                 I'm just about to finish my studies, so if you're looking to hire, you better catch me while I'm still on the market!
             </p>
         </section>
+        <!-- Profile section -->
         <section id="profile">
             <h2>Profile</h2>
             <section id="skills"> 
@@ -58,6 +64,7 @@
                     </p>
                 </div>
             </section>
+            <!-- About section -->
             <section id="about"> 
                 <h3>A little about me</h3>
                 <div class="text-area">
@@ -71,6 +78,7 @@
                 </div>
             </section>
         </section>
+        <!-- Experience section -->
         <section id="experience">
             <h2>Experience</h2>
             <div id="experience-container">
@@ -86,29 +94,27 @@
                 </div>
             </div>
         </section>
+        <!-- Portfolio section -->
         <section id="portfolio">
             <h2>Portfolio</h2>
             <div id="portfolio-area">
-
             </div>
         </section>
+        <!-- Contact section -->
         <section id="contact">
             <form id="contact-form">
                 <h2>Contact</h2>
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" required>
-                <label for="email">Email</label>
-                <input type="text" id="email" name="email" required>
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="10" required></textarea>
+                <label for="contact-form-name">Name</label>
+                <input type="text" id="contact-form-name" name="contact-form-name" required>
+                <label for="contact-form-subject">Subject</label>
+                <input type="text" id="contact-form-subject" name="contact-form-subject" required>
+                <label for="contact-form-email">Email</label>
+                <input type="email" id="contact-form-email" name="contact-form-email" required>
+                <label for="contact-form-message">Message</label>
+                <textarea id="contact-form-message" name="contact-form-message" rows="10" required></textarea>
                 <input type="submit" value="Send">
             </form>
         </section>
     </main>
-    <footer>
-
-    </footer>
     <script src="js/main.js"></script>
 </body>
