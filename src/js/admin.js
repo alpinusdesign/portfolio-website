@@ -5,7 +5,7 @@
 /* ============= */
 
 /* - API-URL - */
-const url = "http://localhost/projekt/index.php";
+const url = "https://alpinusdesign.se/rest/index.php";
 
 /* - Dataset selector - */
 // Used to choose between different datasets.
@@ -47,14 +47,14 @@ const projectForms = {
     "deleteFormEl": document.getElementById("project-form-delete"),
 
     /* - Create - */
-    createForm = {
+    "createForm": {
         "titleEl": document.getElementById("project-create-title"),
         "descEl": document.getElementById("project-create-description"),
         "urlEl": document.getElementById("project-create-url")
     },
 
     /* - Update - */
-    updateForm = {
+    "updateForm" : {
         "titleOldEl": document.getElementById("project-update-title-old"),
         "titleEl": document.getElementById("project-update-title-new"),
         "descEl": document.getElementById("project-update-description"),
@@ -62,7 +62,7 @@ const projectForms = {
     },
 
     /* - Delete - */
-    deleteForm = {
+    "deleteForm": {
         "titleEl": document.getElementById("project-delete-title")
     }
 };
@@ -75,7 +75,7 @@ const educationForms = {
     "deleteFormEl": document.getElementById("education-form-delete"),
 
     /* - Create - */
-    createForm = {
+    "createForm": {
         "nameEl": document.getElementById("education-create-name"),
         "schoolEl": document.getElementById("education-create-school"),
         "typeEl": document.getElementById("education-create-type"),
@@ -84,7 +84,7 @@ const educationForms = {
     },
 
     /* - Update - */
-    updateForm = {
+    "updateForm": {
         "nameOldEl": document.getElementById("education-update-name-old"),
         "nameEl": document.getElementById("education-update-name"),
         "schoolEl": document.getElementById("education-update-school"),
@@ -94,7 +94,7 @@ const educationForms = {
     },
 
     /* - Delete - */
-    deleteForm = {
+    "deleteForm": {
         "nameEl": document.getElementById("education-delete-name")
     }
 };
@@ -107,7 +107,7 @@ const occupationForms = {
     "deleteFormEl": document.getElementById("occupation-form-delete"),
 
     /* - Create - */
-    createForm = {
+    "createForm": {
         "companyEl": document.getElementById("occupation-create-company"),
         "titleEl": document.getElementById("occupation-create-title"),
         "startEl": document.getElementById("occupation-create-start"),
@@ -115,7 +115,7 @@ const occupationForms = {
     },
 
     /* - Update - */
-    updateForm = {
+    "updateForm": {
         "oldEntryEl": document.getElementById("occupation-update-entry"),
         "companyEl": document.getElementById("occupation-update-company"),
         "titleEl": document.getElementById("occupation-update-title"),
@@ -124,7 +124,7 @@ const occupationForms = {
     },
 
     /* - Delete - */
-    deleteForm = {
+    "deleteForm": {
         "entryEl": document.getElementById("occupation-delete-entry")
     }
 };
@@ -436,7 +436,7 @@ occupationForms.updateFormEl.addEventListener("submit", function(e) {
     
 /* - Delete - */
 occupationForms.deleteFormEl.addEventListener("submit", function(e) {
-e.preventDefault(); // Prevent the form from being submited the default way.
+    e.preventDefault(); // Prevent the form from being submited the default way.
 
     if(window.confirm("Are you sure you want to delete the occupation?")){ // Delete confirmation.
         fetch(url, {

@@ -2,7 +2,7 @@
 
 /* - Includes - */
 const gulp = require('Gulp');
-const concat = require('gulp-concat');
+const rename = require("gulp-rename");
 const terser = require('gulp-terser');
 const image = require('gulp-image');
 const autoprefixer = require('gulp-autoprefixer');
@@ -19,24 +19,23 @@ const files = {
   imgPath: "src/img/*"
 }
 
-// Task: Compile SASS-files, add prefixes, concatenate and minify CSS-files.
+// Task: Generate source map, compile SASS-files, add prefixes and rename CSS-file.
 function sassTask()
 {
   return gulp.src(files.sassPath)
   .pipe(sourcemaps.init())
   .pipe(sass({outputStyle:'compressed'}).on('error', sass.logError))
   .pipe(autoprefixer({ browsers: ['IE 6','Chrome 9', 'Firefox 14']}))
-  .pipe(concat('styles.css'))
+  .pipe(rename("styles.css"))
   .pipe(sourcemaps.write('./maps'))
   .pipe(gulp.dest('pub/css'))
   .pipe(browserSync.stream());
 }
 
-// Task: Concatenate and minify Javascript.
+// Task: Generate sourcemap and minify Javascript.
 function jsTask()
 {
   return gulp.src(files.jsPath)
-  //.pipe(concat('main.js'))
   .pipe(sourcemaps.init())
   .pipe(terser())
   .pipe(sourcemaps.write('./maps'))

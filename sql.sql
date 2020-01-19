@@ -1,3 +1,4 @@
+/* - Create Tables - */
 CREATE TABLE Projects(
     ID INT(8) NOT NULL AUTO_INCREMENT,
     Title VARCHAR(128) NOT NULL,
@@ -32,4 +33,5 @@ CREATE TABLE Educations(
     FOREIGN KEY (TypeID) REFERENCES EducationTypes(ID)
 );
 
+/* - Inserts - */
 INSERT INTO EducationTypes (Type) VALUES ("Course"), ("Program");

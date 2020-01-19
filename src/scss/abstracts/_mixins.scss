@@ -23,6 +23,7 @@
     }
 }
 
+/* - Break points - */
 @mixin bp-medium
 {
     @media only screen and (max-width:$bp-medium){@content;}

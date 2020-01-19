@@ -5,7 +5,8 @@
 /* ============= */
 
 /* - API-URL - */
-const url = "http://localhost/projekt/index.php";
+const apiUrl = "https://alpinusdesign.se/rest/index.php";
+const emailUrl = "https://alpinusdesign.se/rest/email.php";
 
 /* - Experience navigation buttons - */
 const experienceToggles = {
@@ -25,6 +26,17 @@ const portfolioAreaEl = document.getElementById("portfolio-area");
 /* - Hamburger menu-related elements - */
 const hamburgerButtonEl = document.getElementById("hamburger-bttn");
 const hamburgerMenuEl = document.getElementById("hamburger-menu");
+
+/* - Contact form elements - */
+
+const contactForm = {
+    "formEl": document.getElementById("contact-form"),
+    "nameEl": document.getElementById("contact-form-name"),
+    "subjectEl": document.getElementById("contact-form-subject"),
+    "emailEl": document.getElementById("contact-form-email"),
+    "messageEl": document.getElementById("contact-form-message")
+};
+
 
 /* ============= */
 /* = Functions = */
@@ -100,16 +112,43 @@ hamburgerButtonEl.addEventListener("click", function(){
 
 
 
+/* - Send mail - */
+contactForm.formEl.addEventListener("submit", function(e){
+    e.preventDefault();
+    fetch(emailUrl, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            name: contactForm.nameEl.value,
+            subject: contactForm.subjectEl.value,
+            email: contactForm.emailEl.value,
+            message: contactForm.messageEl.value
+        })
+    }).then(function(response) {
+      response.json().then(data => {
+          console.log(data.message);
+          contactForm.formEl.reset(); // Clear form.
+      });
+    })
+    .catch(function(err) {
+        console.log("Fatal error:" + err);
+    });
+});
+
+
+
 /* - Data loader - */
 // Load relevant database data when the DOM has been loaded.
 document.addEventListener("DOMContentLoaded", function(){
-    fetch(url)
+    fetch(apiUrl)
       .then(function(response) {
         response.json().then(data => {
             printData(data); // Display experiences and projects.
         });
       })
       .catch(function(err) {
-        messageAreaEl.innerHTML = "<p class='error'>Fatal error: " + err + "</p>";
+        console.log("Fatal error:" + err);
       });
 });
